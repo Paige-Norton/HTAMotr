@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES":"1"
+            },
+            "args": [
+                "--meta_arch", "motr",
+                "--dataset_file", "VideoText",
+                "--epoch", "20",
+                "--with_box_refine",
+                "--lr_drop", "5",
+                "--lr", "2e-4",
+                "--lr_backbone", "2e-5",
+                "--pretrained", "/home/ubuntu/MOTRv2-trans/data/projects/motr_mod/r50_deformable_detr_plus_iterative_bbox_refinement-checkpoint.pth",
+                "--batch_size", "1",
+                "--sample_mode", "random_interval",
+                "--sample_interval", "10",
+                "--sampler_lengths", "1",
+                "--merger_dropout", "0",
+                "--dropout", "0",
+                "--random_drop", "0.1",
+                "--fp_ratio", "0.3",
+                "--query_interaction_layer", "QIMv2",
+                "--query_denoise", "0.05",
+                // "--query_denoise", "0",
+                "--num_queries", "20",
+                "--append_crowd",
+                "--det_db", "det_db_motrv2.json",
+                // "--use_checkpoint",
+                "--data_txt_path_train", "datasets/data_path/DSText.train",
+                "--data_txt_path_val", "datasets/data_path/DSText.eval",
+                // "--data_txt_path_train", "datasets/data_path/ICDAR15.train",
+                // "--data_txt_path_val", "datasets/data_path/ICDAR15.eval",
+                // 检测则加上下文
+                "--exp_name", "tracker", 
+                 "--resume","/home/ubuntu/MOTRv2-trans/exps/motrv2DSText/run5/checkpoint0007.pth"
+            ]
+        }
+    ]
+}

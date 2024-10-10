@@ -1,0 +1,25 @@
+--meta_arch motr
+--dataset_file VideoText
+--epoch 20
+--with_box_refine
+--lr_drop 5
+--lr 2e-4
+--lr_backbone 2e-5
+--pretrained /home/ubuntu/MOTRv2-trans/data/projects/motr_mod/r50_deformable_detr_plus_iterative_bbox_refinement-checkpoint.pth
+--batch_size 1
+--sample_mode random_interval
+--sample_interval 1
+--sampler_lengths 5
+--merger_dropout 0
+--dropout 0
+--random_drop 0.1
+--fp_ratio 0.3
+--query_interaction_layer QIMv2
+--query_denoise 0.05
+--num_queries 20
+--append_crowd
+--det_db det_db_DBnet_train_DS.json
+--data_txt_path_train datasets/data_path/DSText.train
+--data_txt_path_val datasets/data_path/DSText.eval
+--exp_name tracker 
+
