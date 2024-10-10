@@ -1,7 +1,7 @@
 # HTAMotr: A Novel Half-To-All MOTR Approach for Incomplete Data Annotation in Video Text Tracking
 ## Introduction
 
-![Overview](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/network.png)
+![Overview](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/network.png)
 
 **Abstract.** This paper presents a novel Half-To-All MOTR (HTAMotr) approach specifically designed to mitigate the challenges posed by incomplete data annotation in video text tracking.  The proposed method introduces three key strategies: (1) rotated queries to improve anchor alignment with text regions, (2) the Proposal-For-Groundtruth Strong Correlation (PForG) strategy to mitigate the negative effects of incomplete annotations, and (3) an overlapping anchor filter to resolve ID switching issues.  Experiments on the DSText dataset demonstrate the effectiveness of HTAMotr, achieving state-of-the-art performance without requiring additional pre-training data or extensive epochs.  By addressing the limitations of traditional MOTR paradigms, this work contributes to advancing video text tracking techniques and facilitating the development of more robust and efficient algorithms.
 
@@ -27,9 +27,9 @@ HTAMotr 			| √ | × |  56.22 | 75.15 | 65.08 | 6275 | 2361
 <!-- |OC-SORT|MOTRv2| -->
 |TransDETR|HTAMotr|
 |:-:|:-:|
-|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/TransDETR_Video_156_5_6.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/HTAMotr_Video_156_5_6.gif)|
-|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/TransDETR_Video_214_1_4.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/HTAMotr_Video_214_1_4.gif)|
-|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/TransDETR_Video_220_2_0.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/main/doc/HTAMotr_Video_220_2_0.gif)|
+|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/HTAMotr_Video_156_5_6.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/HTAMotr_Video_156_5_6.gif)|
+|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/TransDETR_Video_214_1_4.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/HTAMotr_Video_214_1_4.gif)|
+|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/TransDETR_Video_220_2_0.gif)|![](https://github.com/Paige-Norton/HTAMotr/blob/master/doc/HTAMotr_Video_220_2_0.gif)|
 
 
 ## Installation
