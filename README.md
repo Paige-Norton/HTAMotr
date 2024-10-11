@@ -34,7 +34,7 @@ HTAMotr 			| √ | × |  56.22 | 75.15 | 65.08 | 6275 | 2361
 
 ## Installation
 
-The codebase is built on top of [MOTRv2](https://github.com/megvii-research/MOTRv2)
+The codebase is built on top of [MOTRv2](https://github.com/megvii-research/MOTRv2). We employed AdamW as the optimizer across 20 epochs, initiating the learning rate at 2e-4, which decays to 2e-5 after the first five epochs. The batch size was set to one, with each batch comprising six frames. All inference speed metrics were assessed using a single-threaded configuration with a batch size of one on NVIDIA GeForce RTX 3090 GPUs and 2.20 GHz CPUs.
 
 ### Requirements
 
@@ -58,7 +58,10 @@ The codebase is built on top of [MOTRv2](https://github.com/megvii-research/MOTR
     ```
 
 ## Usage
+
+
 ### Dataset preparation
+
 Since the incomplete DSText data was completed when the author wrote the article, please download the [videos](https://rrc.cvc.uab.es/?ch=22&com=downloads) and [incomplete DSText annotation](https://drive.google.com/file/d/1TuQEC7f4d6lS36Z9Y2MJT9Idr-T1Xusp/view?usp=drive_link) to reproduce this code and organize them as following:
 
 ```
@@ -86,15 +89,20 @@ Since the incomplete DSText data was completed when the author wrote the article
 │	├── r50_deformable_detr_plus_iterative_bbox_refinement-checkpoint.pth
 ```
 
+The data annotations we provide are incomplete, which is a key focus of this study and holds significant importance for reproducing the experiments presented in this paper.
+
 ### Training
 
-You may download the coco pretrained weight from [Deformable DETR (+ iterative bounding box refinement)](https://github.com/fundamentalvision/Deformable-DETR#:~:text=config%0Alog-,model,-%2B%2B%20two%2Dstage%20Deformable), and modify the `--pretrained` argument to the path of the weight. Then training HTAMotr on 2 GPUs as following:
+Similar to MOTRv2, you may download the coco pretrained weight from [Deformable DETR (+ iterative bounding box refinement)](https://github.com/fundamentalvision/Deformable-DETR#:~:text=config%0Alog-,model,-%2B%2B%20two%2Dstage%20Deformable), and modify the `--pretrained` argument to the path of the weight. Then training HTAMotr on 2 GPUs as following:
 
 ```bash 
 ./tools/train.sh configs/motrv2DSText.args
 ```
 
 ### Inference on DSText Test Set
+
+You can download the trained model checkpoint0006.pth in [Google Drive](https://drive.google.com/file/d/1FF8oRNjPEOksBmi9kihReRdDt08S-IlW/view?usp=drive_link) to perform inference directly.
+
 
 ```bash
 # run a simple inference on our pretrained weights
