@@ -34,7 +34,7 @@ HTAMotr 			| √ | × |  56.22 | 75.15 | 65.08 | 6275 | 2361
 
 ## Installation
 
-The codebase is built on top of [MOTRv2](https://github.com/megvii-research/MOTRv2). We employed AdamW as the optimizer across 20 epochs, initiating the learning rate at 2e-4, which decays to 2e-5 after the first five epochs. The batch size was set to one, with each batch comprising six frames. All inference speed metrics were assessed using a single-threaded configuration with a batch size of one on NVIDIA GeForce RTX 3090 GPUs and 2.20 GHz CPUs.
+The codebase is built on top of [MOTRv2](https://github.com/megvii-research/MOTRv2), and the idea of generating queries through proposals originates from this paper. Thanks for providing us with the code framework and idea.
 
 ### Requirements
 
